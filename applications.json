@@ -1,0 +1,180 @@
+[{
+    "id": "com.sample.ext.simpleLink",
+    "name": "Simple Link Sample",
+    "title": "Simple Link Sample",
+    "description": "This samples demonstrates using the simple link extension point",
+    "extensions": [{
+      "name": "Simple Link",
+      "type": "com.ibm.appreg.ext.simpleLink",
+      "object": "com.ibm.appreg.object.person",
+      "payload": {
+        "text": "Simple Link Action",
+        "title": "Simple Link Action",
+        "href": "http://server1.company.com/vopext/simple-link/index.html"
+      }
+    }],
+    "services": [
+      "Verse"
+    ]
+  },
+  {
+    "id": "com.sample.ext.templatedLink",
+    "name": "Templated Link Sample",
+    "title": "Templated Link Sample",
+    "description": "This samples demonstrates using the templated link extension point",
+    "extensions": [{
+      "name": "Person Templated Link",
+      "type": "com.ibm.appreg.ext.templatedLink",
+      "object": "com.ibm.appreg.object.person",
+      "payload": {
+        "text": "Templated Link Action",
+        "title": "Templated Link Action",
+        "href": "http://server1.company.com/vopext/templated-link/templatedLink.html?searchFor=${profile.primaryEmail}"
+      }
+    }],
+    "services": [
+      "Verse"
+    ]
+  },
+  {
+    "id": "com.sample.ext.widget",
+    "name": "Widget Samples",
+    "title": "Widget Samples",
+    "description": "This samples demonstrates using the widget extension point",
+    "extensions": [{
+      "name": "Person Action Sample",
+      "type": "com.ibm.verse.ext.widget",
+      "payload": {
+        "url": "http://server1.company.com/vopext/widget-person-action/actions.html",
+        "features": [
+          "core"
+        ],
+        "actions": [{
+            "id": "com.sample.ext.person.action",
+            "object": "com.ibm.appreg.object.person",
+            "text": "Person Widget Action",
+            "title": "Person Widget Action",
+            "location": "window",
+            "renderParams": {
+              "width": "900",
+              "height": "500"
+            }
+          },
+          {
+            "id": "com.ibm.verse.ext.mail.compose.action",
+            "path": "mail.compose",
+            "text": "Mail Compose Action",
+            "title": "Mail Compose Action",
+            "location": "window",
+            "renderParams": {
+              "width": "900",
+              "height": "500"
+            }
+          },
+          {
+            "id": "com.ibm.verse.ext.mail.read.action",
+            "path": "mail.read",
+            "text": "Mail Read Action",
+            "title": "Mail Read Action",
+            "location": "window",
+            "renderParams": {
+              "width": "900",
+              "height": "500"
+            }
+          }
+        ]
+      }
+    }],
+    "services": [
+      "Verse"
+    ]
+  },
+  {
+    "id": "com.ibm.verse.sample.ext.custome-name-picker-advanced-search",
+    "name": "Custom name picker with advanced search",
+    "title": "Custom name picker with advanced search",
+    "description": "Add a custom name picker with advanced search which uses on-Premise Domino to find people, open mail compose and click To link to open this.",
+    "extensions": [{
+      "type": "com.ibm.verse.ext.namePicker",
+      "name": "Custom name picker with advanced search",
+      "payload": {
+        "url": "http://server1.company.com/vopext/custom-name-picker/index.html"
+      }
+    }],
+    "services": [
+      "Verse"
+    ]
+  },
+  {
+    "id": "com.ibm.verse.sample.tone.analyzer",
+    "name": "Watson Tone Analyzer",
+    "title": "Watson Tone Analyzer",
+    "description": "This samples demonstrates integrating the Watson Tone Analyzer with Verse",
+    "extensions": [{
+      "id": "com.ibm.verse.sample.ext.tone.analyzer",
+      "name": "Watson Tone Analyzer Sample",
+      "type": "com.ibm.verse.ext.widget",
+      "payload": {
+        "url": "http://localhost:3000/verse-tone",
+        "features": [
+          "core"
+        ],
+        "actions": [{
+          "id": "com.ibm.verse.mail.read.tone.analyzer",
+          "path": "mail.read",
+          "text": "Analyze Tone",
+          "title": "Analyze Tone",
+          "location": "window",
+          "renderParams": {
+            "width": "900",
+            "height": "500"
+          }
+        }]
+      }
+    }],
+    "services": [
+      "Verse"
+    ]
+  },
+  {
+    "id": "com.sample.ext.beforeOnSend",
+    "name": "Hook Before Send Sample",
+    "title": "Hook Before Send Sample",
+    "description": "Sample that shows how to check for a credit card number in mail being sent",
+    "extensions": [{
+      "type": "com.ibm.verse.ext.beforeOnSend",
+      "name": "Hook Before Send Extension",
+      "title": "Hook Before Send Extension",
+      "payload": {
+          "url": "http://server1.company.com/vopext/hook-before-send/index.html"
+        }
+    }],
+    "services": [
+      "Verse"
+    ]
+  },
+  {
+    "id": "com.sample.ext.liveText",
+    "name": "Live Text Widget Sample application",
+    "title": "Live Text Widget Sample",
+    "description": "The sample shows how to contribute a live text extension in Verse",
+    "extensions": [{
+      "name": "Live Text Widget Sample extension",
+      "type": "com.ibm.verse.ext.liveText",
+      "payload": {
+        "text": "Live Text Widget Action",
+        "href": "http://server1.company.com/vopext/${1}/sample1.html?tel=${2}",
+        "recognizer": "Path:([a-z].*), Tel:([0-9]{8}).*",
+        "location": "window",
+        "renderParams": {
+          "width": "800",
+          "height": "600"
+        }
+      }
+    }],
+    "payload": {},
+    "services": [
+      "Verse"
+    ]
+  }
+]
