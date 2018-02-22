@@ -21,7 +21,7 @@ First you need to clone/download my files from Git Hub https://github.com/ebasso
 
 3) Copy or Move the vopext directory to
 ```
- mkdir -p /domino/notesdata/domino/html/vopext
+ /domino/notesdata/domino/html/vopext
  ```
 
 4) Set the variables in the notes.ini:
